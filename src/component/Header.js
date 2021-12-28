@@ -2,9 +2,9 @@ import React from "react";
 
 const Header = () => {
   return(
-      <React.Fragment>
+      <div className="header">
           <p>LOGO</p>
-      </React.Fragment>
+      </div>
   )
 }
 

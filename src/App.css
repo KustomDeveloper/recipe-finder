@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+.header {
+  background: #000;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.recipeslist {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr min-content;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.recipebox {
+  background: #eee;
+  width: 100%;
+  max-width: 250px;
+  padding: 30px;
+  margin: 
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.recipebox li {
+  list-style: none;
 }
-
-.App-link {
-  color: #61dafb;
+.recipe-name {
+  font-size: 24px;
+  font-weight: bold;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.recipe-description {
+  margin: 15px 0;
+}
+.footer {
+  background: #000;
 }
