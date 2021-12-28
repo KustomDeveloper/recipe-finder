@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import RecipeList from './RecipeList'
 import axios from "axios"
-// import {data} from "../data.js" 
 
 const SearchBar = () => {
     const [search, updateSearch] = useState("");
@@ -11,7 +10,6 @@ const SearchBar = () => {
     const getRecipesList = (e) => {
         e.preventDefault()
 
-       
         var options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
@@ -32,8 +30,6 @@ const SearchBar = () => {
         });
     }
 
-    // console.log(recipeContext)
-
     return(
         <div className="search">
             <form>
@@ -46,7 +42,7 @@ const SearchBar = () => {
                     />
                 </label>
 
-                <button onClick={(e) => getRecipesList(e)}>Submit</button>
+                <button onClick={(e) => getRecipesList(e)}>Search</button>
             </form>
 
             <RecipeList recipes={recipes}/>
