@@ -3,8 +3,9 @@ import Header from './Header'
 import Footer from './Footer'
 import {useLocation} from "react-router-dom"
 import axios from 'axios'
-import parse from 'html-react-parser'
-import { dataSingle } from "../data-single"
+import VideoPlayer from './VideoPlayer'
+// import parse from 'html-react-parser'
+// import { dataSingle } from "../data-single"
 
 const Recipe = () => {
   const [recipeImg, updateRecipeImage] = useState("") 
@@ -17,7 +18,6 @@ const Recipe = () => {
   let location = useLocation()
   let pathname = location.pathname
   var recipeId = pathname.replace(/[\D]/g, '')
-
 
   async function fetchRecipe() {
     var options = {
@@ -50,9 +50,6 @@ const Recipe = () => {
       fetchRecipe()
   }, [])
 
-//   const isObject = (value) => typeof value === "object" && value !== null;
-  console.log(recipeInstructions)
-
   return(
     <React.Fragment>
         <Header />
@@ -80,11 +77,8 @@ const Recipe = () => {
                     )
                 })}
 
-            <div className="recipe-title watch-vid-title">Watch the Video:</div>
-           
-            <a id="videoplayer-link" target="_new" href={videoUrl}><img width="100%" src={recipeImg}></img>
-            <span className="arrow-right-bg"><span className="arrow-right"></span></span>
-            </a>
+            {videoUrl ? <VideoPlayer videoUrl={videoUrl} recipeImg={recipeImg} /> : ''}
+            
     
             </div>
         </div>

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RecipeList from './RecipeList'
 import axios from "axios"
 
 const SearchBar = () => {
-    const [search, updateSearch] = useState("");
+    const [search, updateSearch] = useState("spaghetti");
     const [recipes, updateRecipes] = useState({});
     const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -32,6 +32,28 @@ const SearchBar = () => {
             console.error(error);
         });
     }
+
+    //Load starter data
+    useEffect(() => {
+        var options = {
+            method: 'GET',
+            url: 'https://tasty.p.rapidapi.com/recipes/list',
+            params: {q: search},
+            headers: {
+                'x-rapidapi-host': 'tasty.p.rapidapi.com',
+                'x-rapidapi-key': apiKey
+            }
+        };
+
+        axios.request(options).then(function (response) {
+            const rawData = response.data.results;
+            const singleRecipe = rawData.filter(item => !item.recipes);
+            updateRecipes(singleRecipe);
+
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }, [])
 
     return(
         <div className="search">

@@ -12,8 +12,6 @@ const Home = () => {
       <Footer />
     </React.Fragment>
     )
-
-
 }
 
 export default Home
