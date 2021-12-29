@@ -7,7 +7,7 @@ const SearchBar = () => {
     const [recipes, updateRecipes] = useState({});
     const apiKey = process.env.REACT_APP_API_KEY;
 
-    const getRecipesList = (e) => {
+    async function getRecipesList(e) {
         e.preventDefault()
 
         var options = {
@@ -20,10 +20,13 @@ const SearchBar = () => {
             }
         };
 
-        axios.request(options).then(function (response) {
+        await axios.request(options).then(function (response) {
             const rawData = response.data.results;
-            const data = rawData.filter(item => item.description);
-            updateRecipes(data);
+            //Only sjow items with a description
+            // const data = rawData.filter(item => item.description);
+            //Only show items with a single recipe
+            const singleRecipe = rawData.filter(item => !item.recipes);
+            updateRecipes(singleRecipe);
 
         }).catch(function (error) {
             console.error(error);

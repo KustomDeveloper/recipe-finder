@@ -36,6 +36,10 @@
   align-items: center; 
   font-weight: bold;
   justify-content: center;
+  cursor: pointer;
+}
+.search button:hover {
+  background: #000;
 }
 .recipeslist {
   display: grid;
@@ -51,6 +55,9 @@
   color: #000;
   text-decoration: none;
 }
+.recipebox.instructionbox {
+  width: 800px;
+}
 .recipe-thumbnail {
   width: 100%;
   margin-bottom: 15px; 
@@ -63,11 +70,34 @@
   list-style: none;
 }
 .recipe-name {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
+}
+.recipe-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.recipebox .seeRecipeBtn {
+  margin-top: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+.recipebox .seeRecipeBtn:hover {
+  background: #000;
 }
 .recipe-description {
   margin: 15px 0;
+}
+.instruction {
+  margin: 20px 0;
+}
+.watch-vid-title {
+  margin-top: 10px;
+}
+.videoplayer {
+  margin-top: 10px;
+  border: 1px solid #ccc;
 }
 .footer {
   background: #000;
