@@ -4,8 +4,6 @@ import Footer from './Footer'
 import {useLocation} from "react-router-dom"
 import axios from 'axios'
 import VideoPlayer from './VideoPlayer'
-// import parse from 'html-react-parser'
-// import { dataSingle } from "../data-single"
 
 const Recipe = () => {
   const [recipeImg, updateRecipeImage] = useState("") 
