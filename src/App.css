@@ -95,10 +95,46 @@
 .watch-vid-title {
   margin-top: 10px;
 }
-.videoplayer {
-  margin-top: 10px;
-  border: 1px solid #ccc;
+#videoplayer-link {
+  position: relative;
+  display: inline-block;
 }
+#videoplayer-link:after {
+  content: "";
+  position: absolute;
+  background: url('img/play_button.png') no-repeat;
+  width: 150px;
+  height: 150px;
+
+  z-index: 999999;
+  display: inline-block;
+}
+.arrow-right {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 40px solid #fff;
+  top: calc(50% - 40px);
+  left: calc(50% - 20px);
+}
+/* .arrow-right:hover {
+  border-left: 40px solid #000;
+} */
+.arrow-right-bg {
+  background: transparent;
+  border: 5px solid #fff;
+  padding: 15px;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: calc(50% - 65px);
+  left: calc(50% - 65px);
+}
+/* .arrow-right-bg:hover {
+  border: 5px solid #000;
+} */
 .footer {
   background: #000;
 }
