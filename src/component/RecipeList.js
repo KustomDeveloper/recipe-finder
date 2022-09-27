@@ -13,7 +13,7 @@ const RecipeList = ({recipes}) => {
   return(
       <div className="recipeslist">
 
-          {Object.keys(recipes).map((key, i) => {
+          {recipes && Object.keys(recipes).map((key, i) => {
             return(
               <div className="recipebox" key={i}>
                 <img className="recipe-thumbnail" src={recipes[key].thumbnail_url} />
