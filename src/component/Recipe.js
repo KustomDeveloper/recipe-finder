@@ -52,18 +52,19 @@ const Recipe = () => {
         <Header />
         <div className="recipeslist sections">
             <div className="recipebox">
-            <img className="recipe-thumbnail" src={recipeImg} />
-            <div className="recipe-name">{recipeName}</div>
-            <br />
-            <div className="recipe-title">Ingredients:</div>
-            {recipeIngredients && console.log('stuff ', recipeIngredients)}
+                <img className="recipe-thumbnail" src={recipeImg} />
+                <div className="recipe-content">
+                    <div className="recipe-name">{recipeName}</div>
+                    <br />
+                    <div className="recipe-title">Ingredients:</div>
+                    {recipeIngredients && console.log('stuff ', recipeIngredients)}
 
-                {recipeIngredients && Object.keys(recipeIngredients).map((key, i) => { 
-                    return( 
-                        <div key={i} className="ingredient" id={"ingredient-" + i}>{recipeIngredients[key].raw_text }</div>
-                    )
-                })}
-               
+                        {recipeIngredients && Object.keys(recipeIngredients).map((key, i) => { 
+                            return( 
+                                <div key={i} className="ingredient" id={"ingredient-" + i}>{recipeIngredients[key].raw_text }</div>
+                            )
+                        })}
+                </div>
             </div>
 
             <div className="recipebox instructionbox">

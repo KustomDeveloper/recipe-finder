@@ -25,7 +25,7 @@ const RecipeList = ({recipes}) => {
 
                   <li className="additional-info">{recipes[key].num_servings ? recipes[key].num_servings : ''}<span className="recipe-subtitle"> {recipes[key].num_servings ? ' Servings' : ''}</span></li>
 
-                  <li className="additional-info">{recipes[key].user_ratings.count_positive ? recipes[key].user_ratings.count_positive +'/'+ (recipes[key].user_ratings.count_positive + recipes[key].user_ratings.count_negative) : ''}<span className="recipe-subtitle"> {recipes[key].user_ratings.count_positive ? ' Users liked this recipe' : ''}</span></li>
+                  <li className="additional-info liked-by-users">{recipes[key].user_ratings.count_positive ? recipes[key].user_ratings.count_positive +'/'+ (recipes[key].user_ratings.count_positive + recipes[key].user_ratings.count_negative) : ''}<span className="recipe-subtitle"> {recipes[key].user_ratings.count_positive ? ' Users liked this recipe' : ''}</span></li>
 
                 </ul>
 
