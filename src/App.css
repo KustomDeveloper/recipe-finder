@@ -28,7 +28,7 @@
   width: 100px;
   height: 35px;
   padding: 15px;
-  background: orange;
+  background:#0089ff;
   color: #fff;
   border: none;
   display: inline-flex;
@@ -42,10 +42,9 @@
 }
 .recipeslist {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-template-rows: auto auto;
-  grid-auto-flow: dense;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
   grid-gap: 10px;
+  align-items: start;
 }
 .liked-by-users, .liked-by-users span{
   margin-top: 15px  !important;
@@ -54,6 +53,8 @@
 .recipebox {
   background: #eee;
   padding: 0;
+  height: 100%;
+  position: relative;
 }
 .recipeslist.sections {
   display: grid;
@@ -75,6 +76,10 @@
 .recipe-thumbnail {
   width: 100%;
   margin-bottom: 15px; 
+  max-height: 250px;
+}
+.recipeslist.sections .recipe-thumbnail {
+  max-height: 100%;
 }
 .recipebox ul {
   margin: 0;
@@ -97,6 +102,8 @@
   margin-top: 20px;
   width: 100%;
   cursor: pointer;
+  position: absolute;
+  bottom: 0;
 }
 .recipebox .seeRecipeBtn:hover {
   background: #000;
